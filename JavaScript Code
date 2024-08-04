@@ -1,0 +1,76 @@
+// Ensure GSAP and ScrollTrigger are properly registered
+gsap.registerPlugin(ScrollTrigger);
+
+// Initialize Locomotive Scroll
+const locoScroll = new LocomotiveScroll({
+  el: document.querySelector("#main"),
+  smooth: true
+});
+
+// Each time Locomotive Scroll updates, tell ScrollTrigger to update too
+locoScroll.on("scroll", ScrollTrigger.update);
+
+// Tell ScrollTrigger to use these proxy methods for the "#main" element
+ScrollTrigger.scrollerProxy("#main", {
+  scrollTop(value) {
+    return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
+  },
+  getBoundingClientRect() {
+    return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
+  },
+  pinType: document.querySelector("#main").style.transform ? "transform" : "fixed"
+});
+
+// Refresh ScrollTrigger and Locomotive Scroll on window resize or refresh
+ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+ScrollTrigger.refresh();
+
+// GSAP animation setup for #page3
+
+gsap.from("#page3", {
+  scale: 0.8,
+  opacity: 0,
+  duration: 1,
+  stagger: 0.4,
+  scrollTrigger: {
+    trigger: "#page3",          // Element that triggers the animation
+    scroller: "#main",          // Correct scroller element if using Locomotive Scroll
+    markers: true,              // Optional: For debugging, set to false to hide markers
+    start: "top 60%",           // Start animation when top of #page3 reaches 60% of the viewport height
+    end: "top 40%",             // End animation when top of #page3 reaches 40% of the viewport height
+    scrub: 3,                   // Link animation progress to scroll progress
+  }
+});
+
+
+gsap.from("#card-container", {
+  scale: 0.8,
+  opacity: 0,
+  duration: 1,
+  stagger: 0.4,
+  scrollTrigger: {
+    trigger: "#card-container",          // Element that triggers the animation
+    scroller: "#main",          // Correct scroller element if using Locomotive Scroll
+    markers: true,              // Optional: For debugging, set to false to hide markers
+    start: "top 60%",           // Start animation when top of #page3 reaches 60% of the viewport height
+    end: "top 40%",             // End animation when top of #page3 reaches 40% of the viewport height
+    scrub: 3,                   // Link animation progress to scroll progress
+  }
+});
+
+gsap.from(".contact-container", {
+  scale: 0.8,
+  opacity: 0,
+  duration: 1,
+  stagger: 0.4,
+  scrollTrigger: {
+    trigger: ".contact-container",          // Element that triggers the animation
+    scroller: "#main",          // Correct scroller element if using Locomotive Scroll
+    markers: true,              // Optional: For debugging, set to false to hide markers
+    start: "top 60%",           // Start animation when top of #page3 reaches 60% of the viewport height
+    end: "top 40%",             // End animation when top of #page3 reaches 40% of the viewport height
+    scrub: 3,                   // Link animation progress to scroll progress
+  }
+});
+
+
