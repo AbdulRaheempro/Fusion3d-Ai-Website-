@@ -1,0 +1,415 @@
+/* Reset and box-sizing */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Full height and width for html and body */
+html,
+body {
+    min-height: 100%;
+    width: 100%;
+}
+
+/* Main container styling */
+#main {
+    position: relative;
+}
+
+
+#page1 {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    
+
+    
+}
+
+/* Fullscreen video with object-fit */
+#page1 > video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* Navbar styling */
+.navbar {
+    height: 10vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    background-color: rgb(35, 7, 61);
+}
+
+.navbar-brand {
+    color: white;
+    font-size: 1.5em;
+    text-decoration: none;
+}
+
+/* Navbar links styling */
+.navbar-nav {
+    left: 30px;
+    list-style: none;
+    display: flex;
+    gap: 140px;
+}
+
+.nav-item {
+    /* Align items center within navbar */
+    display: flex;
+    align-items: center;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: aqua;
+}
+
+/* Navbar button styling */
+.navbar-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px;
+    background-color: aqua;
+    color: rgb(35, 7, 61);
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.navbar-btn:hover {
+    background-color: lightblue;
+}
+
+/* Right navigation button styling */
+#rightnav > button {
+    padding: 10px 20px;
+    border-radius: 50px;
+    border: 1px solid wheat;
+    background-color: blueviolet;
+    color: aqua;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 15px;
+}
+
+.bottompage{
+    position: absolute;
+    top: 40%;
+    bottom: 20%;
+    left: 15%;
+    
+    height:40vh ;
+   
+    width: 80%;
+}
+.bottompage>h1{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: antiquewhite;
+    font-size: 100;
+    font-weight: 100px;
+}
+.bottom-inner{
+    position: absolute;
+    height: 35%;
+    width: 100%;
+   
+}
+.bottom-inner>h4{
+    
+    font-size: 20px;
+    font-weight: 100;
+    color: antiquewhite;
+    background-color: rgb(0, 0, 0);
+
+}
+.bottom-inner{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+   
+    
+}
+.bottom-inner>button{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px;
+    color: rgb(237, 237, 237);
+    font-size: 16px;
+    background-color: rgb(5, 5, 4);
+    font-weight: 900;
+}
+
+
+
+
+#page2 {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    padding: 0 8vw; /* Padding on left and right */
+    color: antiquewhite;
+         /* Ensure no content overflows */
+}
+
+#page2 > h2 {
+    font-weight: 300; /* Lighter font weight for h2 */
+    font-size: 2.5vw; /* Font size for h2 */
+     left: 40%;
+    text-align: center; /* Center text alignment */
+}
+
+#page2 > h1 {
+    font-weight: 200; /* Lighter font weight for h1 */
+    width: 80%; /* Maintain width for consistent text wrapping */
+    font-size: 3vw; /* Font size for h1 */
+    text-align: center; /* Center text alignment */
+    line-height: 1.4; /* Improve readability */
+    margin: 0; /* Remove default margin */
+    position: relative; /* Ensure h1 is above the video */
+    z-index: 1; /* Ensure text is above the video */
+}
+
+#page2 > video {
+    position: absolute; /* Position video behind the text */
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: 0; /* Ensure video stays behind text */
+}
+
+#page3 {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    padding: 0 8vw; /* Padding on left and right */
+    color: antiquewhite;
+        overflow: hidden; /* Ensure no content overflows */
+}
+#page3 > video {
+    position: absolute; /* Position video behind the text */
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: 0; /* Ensure video stays behind text */
+}
+
+
+#page3 h1, #page3 h2 {
+    position: relative;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for better visibility */
+    padding: 10px;
+    margin: 10px 0;
+    display: inline-block;
+    border-radius: 5px;
+}
+
+#page3 h1, #page3 h2:hover{
+    background-color: rgb(54, 39, 77);
+}
+#page3 > button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px;
+    color: rgb(237, 237, 237);
+    font-size: 1vw;
+    background-color: rgb(5, 5, 4);
+    font-weight: 900;
+    cursor: pointer;
+    z-index: 10;
+    position: relative;
+    margin-top: 20px;
+}
+#page3 > button:hover {
+    background-color: rgb(54, 39, 77);
+}
+
+#card-container {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    background-color: #f9f9f9;
+    height: 100vh; /* Full viewport height */
+    overflow: hidden; /* Hide overflow */
+    text-align: center;
+}
+
+#card-container h1 {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2.5em;
+    margin: 0;
+    color: #333;
+    z-index: 1; /* Ensure heading is above other content */
+}
+
+.video-card-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.video-card-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the container without distortion */
+    z-index: 0; /* Ensure video is behind the cards */
+}
+
+.card-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap; /* Ensure cards stay in a single row */
+    padding: 20px;
+    box-sizing: border-box;
+    pointer-events: none; /* Ensure video interactions are possible */
+    z-index: 1; /* Ensure cards are above the video */
+    overflow-x: auto; /* Allow horizontal scrolling if needed */
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent white background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px;
+    border-radius: 8px;
+    width: 300px;
+    transition: box-shadow 0.3s ease;
+    flex: 0 0 auto; /* Prevent flex items from shrinking or growing */
+    pointer-events: auto; /* Allow interaction with the cards */
+}
+
+.card-container .card:hover {
+    box-shadow: 0 6px 12px rgba(202, 178, 178, 0.2);
+}
+
+
+
+.card h4 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.card p {
+    font-size: 1em;
+    color: #666;
+    line-height: 1.5;
+}
+
+
+.contact-container {
+    background-color: #152e48;
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full height of the viewport */
+    max-width: 100%;
+    padding: 20px;
+    border-radius: 8px;
+     /* Light background color */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Ensure no overflow */
+}
+
+.contact-container h1 {
+    font-size: 2.5em; /* Larger heading */
+    margin-bottom: 20px;
+    color: #e8dfdf;
+    text-align: center;
+    position: relative;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 600px; /* Limit the width of the form */
+}
+
+.contact-form label {
+    font-size: 1.1em;
+    margin-bottom: 5px;
+    color: #ebdddd;
+}
+
+.contact-form input, 
+.contact-form textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1em;
+    width: 100%; /* Full width input and textarea */
+}
+
+.contact-form button {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #13263a;
+    color: #fff;
+    font-size: 1.1em; /* Larger button text */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%; /* Full width button */
+}
+
+.contact-form button:hover {
+    background-color: #0056b3;
+}
+
+
+
+
+/* Footer styling */
+.footer {
+    font-size: larger;
+    font-weight: 100;
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #f8f2f2;
+    text-align: center;
+}
+
